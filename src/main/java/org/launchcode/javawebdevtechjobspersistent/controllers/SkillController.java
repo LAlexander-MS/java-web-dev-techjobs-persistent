@@ -48,7 +48,7 @@ public class SkillController {
         } else return "redirect:../";
     }
 
-    @GetMapping("view")
+    @GetMapping
     public String displayAddSkills(Model model) {
         model.addAttribute("title", "All Skills");
         model.addAttribute("skills", skillRepository.findAll());
