@@ -11,8 +11,7 @@ import java.util.List;
 @Entity
 public class Skill extends AbstractEntity {
 
-//    @Size(max = 1500, message = "Description cannot exceed 1500 characters")
-//    @NotBlank(message = "Description is required, must be up to 300 characters. Try Again")
+
     private String description;
 
     @ManyToMany(mappedBy = "skills")
