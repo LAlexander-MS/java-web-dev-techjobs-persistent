@@ -41,9 +41,5 @@ public class Skill extends AbstractEntity {
         this.jobs = jobs;
     }
 
-    //    @Override
-//    public String toString() {
-//        return location;
-//    }
 
 }

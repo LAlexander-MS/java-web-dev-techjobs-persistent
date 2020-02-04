@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 public class Employer extends AbstractEntity {
 
-//        @NotNull
+
         @Size(min = 3, max = 300, message = "Provide Job Location")
         @NotBlank(message = "Location is required, must be up to 300 characters. Try Again")
         private String location;
@@ -20,8 +20,7 @@ public class Employer extends AbstractEntity {
         @JoinColumn
         private List<Job> jobs = new ArrayList<>();
 
-//        @JoinColumn(mappedBy = "employer")
-//        private List<Job> jobs = new ArrayList<>();
+
 
         public Employer(String location) {
             this.location = location;

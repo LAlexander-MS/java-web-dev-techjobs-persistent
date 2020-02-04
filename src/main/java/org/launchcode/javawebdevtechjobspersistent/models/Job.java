@@ -11,9 +11,7 @@ public class Job extends AbstractEntity {
     @ManyToOne
     private Employer employer;
 
-//    @NotNull(message = "Employer is required, please try again")
-//@JoinColumn
-//    @NotNull(message = "Skill is required, please try again")
+
 
     @ManyToMany
     private List<Skill> skills = new ArrayList<>();
@@ -28,7 +26,7 @@ public class Job extends AbstractEntity {
 
     // Getters and setters.
 
-//   @ManyToOne
+
 
     public Employer getEmployer() {
         return employer;
