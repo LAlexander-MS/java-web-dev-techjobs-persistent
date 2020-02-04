@@ -56,8 +56,8 @@ public class HomeController {
             model.addAttribute("title", "Add Job");
             return "add";
         }
-        Optional <Employer> employerObj = employerRepository.findById(employerId);
-        Employer employer = employerObj.get();
+        Optional <Employer> employerOptional = employerRepository.findById(employerId);
+        Employer employer = employerOptional.get();
         newJob.setEmployer(employer);
 
         List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
