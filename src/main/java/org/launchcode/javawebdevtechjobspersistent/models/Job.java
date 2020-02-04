@@ -14,7 +14,7 @@ public class Job extends AbstractEntity {
 
     @ManyToMany
 //    @JoinColumn
-    @NotNull(message = "Skill is required, please try again")
+//    @NotNull(message = "Skill is required, please try again")
     private List<Skill> skills = new ArrayList<>();
 
     public Job() {

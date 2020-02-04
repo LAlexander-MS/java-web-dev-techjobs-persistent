@@ -12,12 +12,12 @@ public class JobData {
 
     /**
      * Returns the results of searching the Jobs data by field and search term.
-     *
+     * <p>
      * For example, searching for employer "Enterprise" will include results
      * with "Enterprise Holdings, Inc".
      *
-     * @param column Job field that should be searched.
-     * @param value Value of the field to search for.
+     * @param column  Job field that should be searched.
+     * @param value   Value of the field to search for.
      * @param allJobs The list of jobs to search.
      * @return List of all jobs matching the criteria.
      */
@@ -25,26 +25,35 @@ public class JobData {
 
         ArrayList<Job> results = new ArrayList<>();
 
-        if (value.toLowerCase().equals("all")){
+        if (value.toLowerCase().equals("all")) {
             return (ArrayList<Job>) allJobs;
         }
 
-        if (column.equals("all")){
+        if (column.equals("all")) {
             results = findByValue(value, allJobs);
             return results;
-        }
+        } else if (column.equals("skill")) {
+            for (Job job : allJobs) {
+                for (Skill skill : job.getSkills()) {
+                    if (skill.getName().toLowerCase().contains(value.toLowerCase())) {
+                        results.add(job);
+                        break;
+                    }
+                }
+            }
+
+        return results;
+    } else {
+
         for (Job job : allJobs) {
-
             String aValue = getFieldValue(job, column);
-
             if (aValue != null && aValue.toLowerCase().contains(value.toLowerCase())) {
                 results.add(job);
             }
         }
-
-        return results;
     }
-
+    return results;
+}
     public static String getFieldValue(Job job, String fieldName){
         String theValue;
         if (fieldName.equals("name")){
