@@ -12,9 +12,9 @@ import java.util.Objects;
 public abstract class AbstractEntity {
     @Id
     @GeneratedValue
+    @NotNull
     private int id;
 
-//    @NotNull
     @Size(min = 3, max = 200, message = "Name must be between 3 and 200 characters in length")
     @NotBlank(message = "Name is required, please enter name up to 200 characters. Try Again")
     private String name;
