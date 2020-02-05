@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("Skills")
+@RequestMapping("skills")
 public class SkillController {
 
     @Autowired
